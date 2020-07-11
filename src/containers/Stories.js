@@ -13,7 +13,7 @@ function Stories() {
 
   return (
     <div>
-      <h1 className="text-danger">Stories . . .</h1>
+      <h1 className="red-1">Stories . . .</h1>
 
       {/* mapping component stories list */}
       {stories.map((story) => (

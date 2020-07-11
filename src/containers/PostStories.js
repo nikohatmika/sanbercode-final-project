@@ -39,7 +39,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <h1 className="text-danger">Post Your Story</h1>
+        <h1 className="red-1">Post Your Story</h1>
         <form className="ml-2" onSubmit={this.onSubmit}>
           <label>
             Name:
