@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import { connect } from "react-redux";
-import { postStory } from "../redux/postSlice";
+import { postStory } from "../redux/storySlice";
 import { withRouter } from "react-router-dom";
 
 class Home extends Component {
@@ -27,7 +27,7 @@ class Home extends Component {
       postStory({
         title: inputTitle.current.value,
         category: inputCategory.current.value,
-        story: inputStory.current.value,
+        body: inputStory.current.value,
         user: inputUser.current.value,
       })
     );
