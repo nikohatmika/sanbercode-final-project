@@ -1,0 +1,19 @@
+.footer-container {
+  // position: fixed;
+  // bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background: $black-1;
+  padding: 5px;
+
+  .navigation {
+    a {
+      color: $red-1;
+      font-size: 16px;
+      font-weight: 500;
+      padding: 5px 15px;
+      border-right: 1px solid $red-2;
+    }
+  }
+}
