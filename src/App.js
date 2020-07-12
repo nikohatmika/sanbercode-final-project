@@ -1,13 +1,19 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  useLocation,
+  useHistory,
+} from "react-router-dom";
 import { Header } from "./components";
 import { Home, Stories, PostStories } from "./containers";
 import "./App.css";
 
-function App() {
+function App(props) {
   return (
     <Router>
-      <Header />
+      <Header location={useLocation} />
       <div className="bg-body">
         <Switch>
           <Route path="/stories">
