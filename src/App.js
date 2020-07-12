@@ -4,13 +4,12 @@ import {
   Switch,
   Route,
   useLocation,
-  useHistory,
 } from "react-router-dom";
 import { Header, Footer } from "./components";
 import { Home, Stories, PostStories, About, FAQ } from "./containers";
 import "./App.css";
 
-function App(props) {
+function App() {
   return (
     <Router>
       <Header location={useLocation} />

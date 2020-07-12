@@ -23,13 +23,13 @@ function Header({ location }) {
     if (prevState && prevState.filter !== filter) {
       dispatch(filterStory(filter));
     }
-  }, [filter]);
+  }, [dispatch, filter, prevState]);
 
   useEffect(() => {
     if (prevState && prevState.search !== search) {
       dispatch(searchStory(search));
     }
-  }, [search]);
+  }, [dispatch, prevState, search]);
 
   return (
     <div className="header-container">
