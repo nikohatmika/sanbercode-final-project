@@ -18,8 +18,9 @@ export const storySlice = createSlice({
   name: "story",
   initialState: {
     data,
-    filter: "all",
     lastId,
+    filter: "all",
+    search: null,
   },
   reducers: {
     postStory: (state, action) => {
@@ -34,10 +35,14 @@ export const storySlice = createSlice({
     filterStory: (state, action) => {
       state.filter = action.payload;
     },
+
+    searchStory: (state, action) => {
+      state.search = action.payload;
+    },
   },
 });
 
-export const { postStory, filterStory } = storySlice.actions;
+export const { postStory, filterStory, searchStory } = storySlice.actions;
 
 export const selectStories = (state) => state.story;
 
