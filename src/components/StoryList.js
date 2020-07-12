@@ -1,10 +1,10 @@
 import React from "react";
 
 function StoryList(props) {
-  const { title, category, body, user } = props.story;
+  const { title, category, body, user, id } = props.story;
   // rendering story list
   return (
-    <div className="py-3 px-3 card-story">
+    <div key={id} className="py-3 px-3 card-story">
       <h5 className="text-primary">{title}</h5>
       <h6 className="text-success text-capitalize">{category}</h6>
       <p className="text-white m-0">{body}</p>

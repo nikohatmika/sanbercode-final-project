@@ -3,13 +3,23 @@ import initData from "../helpers/initData";
 import { parseJSON } from "jquery";
 
 // init data with localStorage if exist if not use initData from helpers
-const story = parseJSON(localStorage.getItem("story"));
+const dataFromLocalStorage = parseJSON(localStorage.getItem("story"));
+const data = dataFromLocalStorage || initData;
+
+// define lastId by the highest value
+const lastId = Math.max.apply(
+  Math,
+  data.map(function (o) {
+    return o.id;
+  })
+);
 
 export const storySlice = createSlice({
   name: "story",
   initialState: {
-    data: story || initData,
+    data,
     filter: "all",
+    lastId,
   },
   reducers: {
     postStory: (state, action) => {

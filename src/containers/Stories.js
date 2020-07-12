@@ -11,11 +11,11 @@ function Stories() {
 
   // decide if stories from local storage is null then use from reducer as an initial state
   const stories = storiesFromLocalStorage || storiesfromReducer;
-  console.log("stories", stories);
+  // console.log("stories", stories);
 
   return (
     <div>
-      {console.log("filter", filter)}
+      {/* {console.log("filter", filter)} */}
       <h1 className="red-1">Stories . . .</h1>
 
       {/* mapping component stories list */}

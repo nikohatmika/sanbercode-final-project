@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 import { connect } from "react-redux";
 import { postStory } from "../redux/storySlice";
 import { withRouter } from "react-router-dom";
@@ -19,24 +18,24 @@ class Home extends Component {
 
   onSubmit(event) {
     event.preventDefault();
-    const { dispatch, history } = this.props;
+    const { history, selectStories, postStory } = this.props;
     const { inputUser, inputTitle, inputStory, inputCategory } = this;
+    const id = selectStories.lastId + 1;
 
     // dispatching to reducer
-    dispatch(
-      postStory({
-        title: inputTitle.current.value,
-        category: inputCategory.current.value,
-        body: inputStory.current.value,
-        user: inputUser.current.value,
-      })
-    );
-
+    postStory({
+      id,
+      title: inputTitle.current.value,
+      category: inputCategory.current.value,
+      body: inputStory.current.value,
+      user: inputUser.current.value,
+    });
     // after submit redirect to stories
     history.push("/stories");
   }
 
   render() {
+    console.log(this.props);
     return (
       <div>
         <h1 className="red-1">Post Your Story</h1>
@@ -82,4 +81,9 @@ class Home extends Component {
   }
 }
 
-export default connect()(withRouter(Home));
+// get the reducers state to props
+const mapStateToProps = (state) => ({
+  selectStories: state.story,
+});
+
+export default connect(mapStateToProps, { postStory })(withRouter(Home));
