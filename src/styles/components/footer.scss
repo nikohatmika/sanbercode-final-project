@@ -1,8 +1,9 @@
 .footer-container {
   // position: fixed;
   // bottom: 0;
+  min-height: 300px;
   width: 100%;
-  display: flex;
+  // display:;
   justify-content: space-between;
   background: $black-1;
   padding: 5px;
@@ -15,5 +16,14 @@
       padding: 5px 15px;
       border-right: 1px solid $red-2;
     }
+  }
+
+  li,
+  a {
+    color: white;
+  }
+
+  a {
+    margin: 5px;
   }
 }
